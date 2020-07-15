@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="dynamic_analysis_data" type="id"/>
+    <item name="dynamic_data_source" type="id"/>
+    <item name="dynamic_elelemt_id" type="id"/>
+    <item name="dynamic_index" type="id"/>
+    <item name="dynamic_jump_data" type="id"/>
+    <item name="dynamic_view_templet" type="id"/>
+</resources>
