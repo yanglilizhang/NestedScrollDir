@@ -13,6 +13,7 @@ import com.jennifer.andy.nestedscrollingdemo.view.DependedView;
  * Author:  andy.xwt
  * Date:    2019-07-11 10:53
  * Description:跟随行为
+ * CoordinatorLayout中的某个view变化会通知依赖这个view的控件(layoutDependsOn)
  */
 
 public class BrotherFollowBehavior extends CoordinatorLayout.Behavior<View> {

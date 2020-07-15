@@ -11,11 +11,15 @@ import com.jennifer.andy.nestedscrollingdemo.R;
  * Author:  andy.xwt
  * Date:    2018/8/8 13:56
  * Description:CoordinatorLayout的效果展示。
+ * https://juejin.im/post/5d430c5a6fb9a06aeb109d56#heading-1
  */
 
 public class CoordinatorLayoutActivity extends AppCompatActivity implements View.OnClickListener {
 
-
+//    处理子控件的依赖下的交互
+//    处理子控件的嵌套滑动
+//    处理子控件的测量与布局
+//    处理子控件的事件拦截与响应。
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

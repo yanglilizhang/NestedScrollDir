@@ -18,7 +18,7 @@ import com.jennifer.andy.nestedscrollingdemo.ui.nested.NestedTraditionActivity;
  */
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-
+//
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -26,11 +26,13 @@ import java.util.List;
  * Author:  andy.xwt
  * Date:    2019-07-08 22:11
  * Description:
+ * https://juejin.im/post/5d3e860be51d454f6f16ecf0#heading-0
  */
 
 public class NestedScrolling2DemoActivity extends AppCompatActivity {
 
-
+//    因为RecyclerView、NestedScrollView等滚动的View，在谷歌中都实现了NestedScrollingChild2接口，
+//    所以我们不用单独来处理子控件对手势滑动与fling的分发，我们只用关心父控件的处理就行了
     private TabLayout mTabLayout;
     private ViewPager mViewPager;
     private StickyNavLayout mStickyNavLayout;
