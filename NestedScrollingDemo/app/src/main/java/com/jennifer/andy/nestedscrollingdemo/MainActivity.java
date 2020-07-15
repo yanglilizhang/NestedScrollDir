@@ -15,10 +15,36 @@ import com.jennifer.andy.nestedscrollingdemo.ui.nested.NestedTraditionActivity;
 
 /**
  * https://github.com/AndyJennifer/NestedScrollingDemo
+ *
+ *https://github.com/yangsanning/BehaviorDemo
+ * https://github.com/Ruomiz/BehaviorSample
+ * https://github.com/msdx/behavior-master
+ * https://github.com/pengguanming/MiMusicBehavior
+ * https://github.com/xukefeng/custom_behavior
+ * https://github.com/EnumContent/MyCustomView
+ * https://github.com/xuweitalang/WX_RecyclerView
+ * https://github.com/879058443/NestedScrollRecyclerView
+ * https://github.com/dxh104/MaterialDisgnPullApp
+ * https://github.com/shengweiling/SlidingLayout
+ * https://github.com/liuguangsen/HightUi
  */
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-//
+// * https://github.com/xunyixiangchao/NestedScrollView
+//            * https://github.com/sangxiaonian/EasyRefrush
+//            * https://github.com/m5314/NestedScrollProject ***
+//            * https://github.com/niuyouquan/HomeDemo
+//            * https://github.com/BmobSnail/SlideNestedPanelLayout
+//            * https://github.com/hufeiyang/NestedScrollingParent2Layout
+//            * https://github.com/taolin2107/SlideConflict
+//            * https://github.com/JohLiu/NestedConflict
+//            * https://github.com/Clearlove2015/UseFixedHeaderScrollView
+//            * https://github.com/flowerthorn/FixedTopBarDemo
+//            * https://github.com/ml1953/ReboundScrollView
+//            * https://github.com/chidehang/ComboScrollLayout
+//            * https://github.com/caocao123/ImitationJD
+//            *
+//            * https://github.com/Jeromeer/HorizontalScrollDemo-master
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

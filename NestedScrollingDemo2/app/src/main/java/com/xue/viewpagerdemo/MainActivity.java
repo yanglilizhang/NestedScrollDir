@@ -38,17 +38,6 @@ import static com.xue.viewpagerdemo.ViewType.TYPE_PARENT;
 /**
  * Created by 薛贤俊 on 2019/2/21.
  * https://github.com/xue5455/NestedScrollingDemo
- * https://github.com/xunyixiangchao/NestedScrollView
- * https://github.com/sangxiaonian/EasyRefrush
- * https://github.com/m5314/NestedScrollProject ***
- * https://github.com/niuyouquan/HomeDemo
- * https://github.com/BmobSnail/SlideNestedPanelLayout
- * https://github.com/hufeiyang/NestedScrollingParent2Layout
- * https://github.com/taolin2107/SlideConflict
- * https://github.com/Clearlove2015/UseFixedHeaderScrollView
- * https://github.com/flowerthorn/FixedTopBarDemo
- *
- * https://github.com/Jeromeer/HorizontalScrollDemo-master
  */
 public class MainActivity extends AppCompatActivity {
 

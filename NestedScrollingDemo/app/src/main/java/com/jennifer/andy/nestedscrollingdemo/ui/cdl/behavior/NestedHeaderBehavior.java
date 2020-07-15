@@ -14,20 +14,25 @@ import android.view.ViewGroup;
 import java.lang.ref.WeakReference;
 
 /**
- * Author:  andy.xwt
- * Date:    2019-07-22 23:24
+ * Author:  TextView嵌套滑动
+ * Date:    https://juejin.im/post/5d43be5af265da03c81501a1
  * Description: 处理嵌套滑动的Behavior,仿照{@link android.support.design.widget.BottomSheetBehavior}
  * 对嵌套滑动相关方法不熟悉的的小伙伴可以查看{@link com.jennifer.andy.nestedscrollingdemo.ui.nested.normal_form.NestedScrollingParent2View}
  * 其实这里可以使用android.support.design.widget.ViewOffsetHelper,熟悉的小伙伴可以自己改造。
  */
 
 public class NestedHeaderBehavior extends CoordinatorLayout.Behavior<View> {
-
+//    向上滑动：
+//    只有当TextView滑动至屏幕外时，RecyclerView才能处理内部内容的滚动。
+//    向下滑动：
+//    当TextView已经被划出屏幕且RecylerView中的内容不能继续向下滑动时，
+//    那么就将TextView滑动至显示。否则RecyclerView单独处理内部内容的滚动。
 
     private WeakReference<View> mNestedScrollingChildRef;
 
     public static final String TAG = "NestedHeaderBehavior";
 
+    //    需要将偏移量传递给RecyclerView，所以在NestedHeaderBehavior的onLayoutChild方法中，我们去创建了关于RecyclerView的弱引用，并设置了mOffset变量来记录TextViwe每次滑动的偏移量。
     private int mOffset;//记录当前布局的偏移量
 
     public NestedHeaderBehavior(Context context, AttributeSet attrs) {
@@ -56,18 +61,30 @@ public class NestedHeaderBehavior extends CoordinatorLayout.Behavior<View> {
         if (target != scrollingChild) {
             return;
         }
-        int currentTop = child.getTop();
-        int newTop = currentTop - dy;
+
+        int currentTop = child.getTop();//当前TextView的Top高度（currentTop）
+        //新位置newTop
+        int newTop = currentTop - dy;//根据当前偏移距离dy，计算出TextView新的Top高度(newTop)
+        Log.i(TAG, "onNestedPreScroll:" + "tv高度：" + child.getHeight() + ",top=" + currentTop + ",偏移量:dy------->" + dy);
         if (dy > 0) {//向上滑动
             //处理在范围内的滚动与fling
+            //判断偏移后的Top(newTop)高度是否大于负的TextView的测量的高度。
+            //当TextView移出屏幕后，通过调用getTop方法获取的高度肯定为负数。这里判断是否大于等于-child.getHeight，
+            // 表示的是当前TextView没有超过它的滚动范围（-child.getHeight到0)
             if (newTop >= -child.getHeight()) {
-                Log.i(TAG, "onNestedPreScroll:向上移动" + "currentTop--->" + currentTop + " newTop--->" + newTop);
+                //tv消耗滑动 -2>-4
+                Log.i(TAG, "onNestedPreScroll:向上移动,tv消耗dy," + "currentTop--->" + currentTop + " newTop--->" + newTop);
                 consumed[1] = dy;
-                mOffset = -dy;
-                ViewCompat.offsetTopAndBottom(child, -dy);
-                coordinatorLayout.dispatchDependentViewsChanged(child);
+                mOffset = -dy;//rv偏移量
+                ViewCompat.offsetTopAndBottom(child, -dy);//移动当前TextView
+                coordinatorLayout.dispatchDependentViewsChanged(child);//通知控件RecyclerView所依赖的TextView发生了改变
             } else { //当超过后，单独处理
+                //表示在当前偏移距离dy下，如果TextView会超过它的滚动范围。
+                // 那么我们就不能使用当前dy来移动TextView。我们只能滚动剩下的范围，
+                // 也就是child.getHeight() +currentTop,(这里使用加号，
+                // 是因为滚动范围为-child.getHeight到0）。
                 consumed[1] = child.getHeight() + currentTop;
+                Log.i(TAG, "onNestedPreScroll:" + "------>consumed[1]=" + child.getHeight() + currentTop);
                 mOffset = -consumed[1];
                 ViewCompat.offsetTopAndBottom(child, -consumed[1]);
                 coordinatorLayout.dispatchDependentViewsChanged(child);
@@ -93,10 +110,15 @@ public class NestedHeaderBehavior extends CoordinatorLayout.Behavior<View> {
 
     @Override
     public void onNestedScroll(@NonNull CoordinatorLayout coordinatorLayout, @NonNull View child, @NonNull View target, int dxConsumed, int dyConsumed, int dxUnconsumed, int dyUnconsumed, int type) {
+//        我们需要处理RecyclerView向下方向上未消耗的距离(dyUnconsumed)。
+//        同样根据当前偏移记录计算出TextVie新的Top高度，计算出是否超出其滚功范围范围。如果没有超过，
+//        则TextView向下偏移距离为-dyUnconsumed,同时记录偏移量(mOffset=-dyUnconsumed),
+//        最后通知RecyclerView，TextView的位置发生了改变。反之，当前TextView的top的值是多少，
+//        那么TextView就向下偏移多少。
         if (dyUnconsumed < 0) {//表示已经向下滑动到头。
             int currentTop = child.getTop();//向上top为负值，原始位置为0
             int newTop = currentTop - dyUnconsumed;
-            if (newTop <= 0) {
+            if (newTop <= 0) {//如果当前的值在滚动范围之内。
                 Log.i(TAG, "onNestedScroll: " + "dyUnconsumed--> " + dyUnconsumed + " currentTop--->" + currentTop + " newTop--->" + newTop);
                 ViewCompat.offsetTopAndBottom(child, -dyUnconsumed);
                 mOffset = -dyUnconsumed;

@@ -2,6 +2,8 @@ package com.jennifer.andy.nestedscrollingdemo.ui.cdl.behavior;
 
 import android.content.Context;
 import android.graphics.Rect;
+
+import androidx.annotation.NonNull;
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.core.view.GravityCompat;
 import androidx.core.view.ViewCompat;
@@ -37,13 +39,16 @@ public class MeasureLayoutBehavior extends CoordinatorLayout.Behavior<View> {
 
     /**
      * 依赖TextView
+     * child-依赖对象
+     * dependency-被依赖对象
+     * 当layoutDependsOn方法返回true时，后面的onDependentViewChanged与onDependentViewRemoved方法才会调用
      */
     @Override
     public boolean layoutDependsOn(CoordinatorLayout parent, View child, View dependency) {
         return dependency instanceof TextView;
     }
 
-
+//    为了保证RecylerView在移动过程中，屏幕中不会出现空白。我们也需要在CoordinatorLayout测量该控件的高度之前，让控件自主的去测量高度
     @Override
     public boolean onMeasureChild(CoordinatorLayout parent, View child, int parentWidthMeasureSpec,
                                   int widthUsed, int parentHeightMeasureSpec, int heightUsed) {
@@ -78,7 +83,8 @@ public class MeasureLayoutBehavior extends CoordinatorLayout.Behavior<View> {
                     // If the measure spec doesn't specify a size, use the current height
                     availableHeight = parent.getHeight();
                 }
-                //计算当前滚动控件的高度。 getScrollRange(header)获取当前View的滑动范围，一般情况下，为view的高度
+                //计算当前滚动控件的高度。 getScrollRange(header)获取当前View的滑动范围，
+                // 一般情况下，为view的高度
                 final int height = availableHeight - header.getMeasuredHeight() + getScrollRange(header);
                 final int heightMeasureSpec = View.MeasureSpec.makeMeasureSpec(height,
                         childLpHeight == ViewGroup.LayoutParams.MATCH_PARENT
@@ -95,6 +101,9 @@ public class MeasureLayoutBehavior extends CoordinatorLayout.Behavior<View> {
         return false;
     }
 
+//    CoordinatorLayout对子控件的布局是类似于FrameLayout的，所以为了保证RecyclerView在TextView的下方显示，我们需要创建属于RecyclerView的Behavior，
+//    并在该Behavior的onLayoutChild方法中处理RecyclerView与TextView的位置关系
+    ///解决RecyclerView的位置关系！！！在TextView下面
     @Override
     public boolean onLayoutChild(CoordinatorLayout parent, View child, int layoutDirection) {
         final List<View> dependencies = parent.getDependencies(child);

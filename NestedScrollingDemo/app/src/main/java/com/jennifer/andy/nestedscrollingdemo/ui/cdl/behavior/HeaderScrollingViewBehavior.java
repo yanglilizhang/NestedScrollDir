@@ -2,9 +2,11 @@ package com.jennifer.andy.nestedscrollingdemo.ui.cdl.behavior;
 
 import android.content.Context;
 import android.graphics.Rect;
+
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.core.view.GravityCompat;
 import androidx.core.view.ViewCompat;
+
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.Gravity;
@@ -26,6 +28,8 @@ public class HeaderScrollingViewBehavior extends CoordinatorLayout.Behavior<View
 
     public static final String TAG = "HeaderScrolling";
 
+    // 注意：在xml引用自定义Behavior时，一定要声明构造函数。
+// 不然在程序的编译过程中，会提示知道不到相应的Behavior。
     public HeaderScrollingViewBehavior() {
     }
 
@@ -66,7 +70,7 @@ public class HeaderScrollingViewBehavior extends CoordinatorLayout.Behavior<View
                     // If the measure spec doesn't specify a size, use the current height
                     availableHeight = parent.getHeight();
                 }
-                //计算当前滚动控件的高度。
+                //计算当前滚动控件的高度。计算出控件A的实际高度(RecyclerView的父控件可用的高度-TextView的高度+TextView的滚动范围)
                 final int height = availableHeight - header.getMeasuredHeight() + getScrollRange(header);
                 final int heightMeasureSpec = View.MeasureSpec.makeMeasureSpec(height,
                         childLpHeight == ViewGroup.LayoutParams.MATCH_PARENT
@@ -82,6 +86,13 @@ public class HeaderScrollingViewBehavior extends CoordinatorLayout.Behavior<View
         }
         return false;
     }
+//    测量逻辑的基本步骤：
+//    获取当前控件的测量模式，判断是否采用的match_parent或者wrap_content。
+//            （对于精准模式，我们不用考虑，控件是否填充屏幕）
+//    当满足条件1，获取当前RecyclerView所依赖的header(TextView），
+//            根据当前TextView的高度，计算出控件A的实际高度
+//            (RecyclerView的父控件可用的高度-TextView的高度+TextView的滚动范围)
+
 
     @Override
     public boolean onLayoutChild(CoordinatorLayout parent, View child, int layoutDirection) {
@@ -114,16 +125,19 @@ public class HeaderScrollingViewBehavior extends CoordinatorLayout.Behavior<View
         return true;
     }
 
+    //    RecyclerView与TextView的联动处理
     @Override
     public boolean onDependentViewChanged(CoordinatorLayout parent, View child, View dependency) {
         offsetChildAsNeeded(parent, child, dependency);
+        //如果当前的控件的位置发生了改变，该返回值一定要返回为true
         return true;
     }
 
     private void offsetChildAsNeeded(CoordinatorLayout parent, View child, View dependency) {
-        final CoordinatorLayout.Behavior behavior =
-                ((CoordinatorLayout.LayoutParams) dependency.getLayoutParams()).getBehavior();
+        final CoordinatorLayout.Behavior behavior = ((CoordinatorLayout.LayoutParams) dependency.getLayoutParams()).getBehavior();
         if (behavior instanceof NestedHeaderBehavior) {
+            //获得TextView的实际偏移量,通过该偏移量我们可以重新设置RecyclerView的位置
+            //改变控件位置的方式有很多种，我们可以使用setTransationY或View.offsetTopAndBottom及其他方式
             Log.i(TAG, "offsetChildAsNeeded: " + dependency.getBottom() + "--->" + child.getTop() + "---->" + ((NestedHeaderBehavior) behavior).getOffset());
             ViewCompat.offsetTopAndBottom(child, dependency.getBottom() - child.getTop() + ((NestedHeaderBehavior) behavior).getOffset());
         }
