@@ -27,12 +27,14 @@ import com.jennifer.andy.nestedscrollingdemo.ui.nested.NestedTraditionActivity;
  * https://github.com/dxh104/MaterialDisgnPullApp
  * https://github.com/shengweiling/SlidingLayout
  * https://github.com/liuguangsen/HightUi
+ * https://github.com/Ovadyah/HomeMallPage 2020仿照最新淘宝首页，京东首页，苏宁首页框架，自定义控件，解决连续滚动等多嵌套问题。
+ * https://github.com/weioule/DoubleSuckTopDemo
+ * https://github.com/xmuSistone/PersistentRecyclerView
  */
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-// * https://github.com/xunyixiangchao/NestedScrollView
+//
 //            * https://github.com/sangxiaonian/EasyRefrush
-//            * https://github.com/m5314/NestedScrollProject ***
 //            * https://github.com/niuyouquan/HomeDemo
 //            * https://github.com/BmobSnail/SlideNestedPanelLayout
 //            * https://github.com/hufeiyang/NestedScrollingParent2Layout

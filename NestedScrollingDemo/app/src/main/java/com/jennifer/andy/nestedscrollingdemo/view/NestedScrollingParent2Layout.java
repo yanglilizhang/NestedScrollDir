@@ -74,7 +74,7 @@ public class NestedScrollingParent2Layout extends LinearLayout implements Nested
 
     /**
      * 在嵌套滑动的子View未滑动之前，判断父view是否优先与子view处理(也就是父view可以先消耗，然后给子view消耗）
-     *
+     * 父控件通过给数组赋值来把消耗的滑动距离传递给内控件
      * @param target   具体嵌套滑动的那个子类
      * @param dx       水平方向嵌套滑动的子View想要变化的距离
      * @param dy       垂直方向嵌套滑动的子View想要变化的距离 dy<0向下滑动 dy>0 向上滑动
