@@ -1,0 +1,21 @@
+ext {
+    version = [
+            minSdkVersion    : 19,
+            compileSdkVersion: 29,
+            targetSdkVersion : 29,
+            versionCode      : 10100,
+            versionName      : "1.1.0",
+    ]
+
+    dependVersion = [
+            appcompat       : "1.1.0",
+            viewpager2      : "1.0.0",
+    ]
+
+    baseLib = [
+            appcompat       : "androidx.appcompat:appcompat:$dependVersion.appcompat",
+            viewpager2      : "androidx.viewpager2:viewpager2:$dependVersion.viewpager2",
+    ]
+
+    baseLibs = baseLib.values()
+}

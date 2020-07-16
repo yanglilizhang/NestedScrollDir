@@ -19,6 +19,9 @@
         <activity android:name=".ViewOffsetActivity"/>
         <activity android:name=".ViewPagerActivity"/>
         <activity android:name=".HeaderImageActivity"/>
+        <activity android:name=".page.FollowUpActivity" />
+        <activity android:name=".page.AvatarActivity" />
+        <activity android:name=".page.TwoActivity" />
     </application>
 
 </manifest>

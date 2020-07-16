@@ -3,11 +3,11 @@ package com.moj.nested
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.support.design.widget.AppBarLayout
-import android.support.v4.app.Fragment
-import android.support.v4.app.FragmentStatePagerAdapter
-import android.support.v7.app.AppCompatActivity
-import android.support.v7.view.menu.MenuBuilder
+import com.google.android.material.appbar.AppBarLayout
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentStatePagerAdapter
+import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.view.menu.MenuBuilder
 import android.util.Log
 import android.view.View
 import android.view.View.GONE
@@ -33,8 +33,8 @@ class ViewPagerActivity : AppCompatActivity(){
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_viewpager)
 
-        viewPager.adapter = object : FragmentStatePagerAdapter(supportFragmentManager){
-            override fun getItem(p0: Int): Fragment {
+        viewPager.adapter = object : androidx.fragment.app.FragmentStatePagerAdapter(supportFragmentManager){
+            override fun getItem(p0: Int): androidx.fragment.app.Fragment {
                 return ListFragment()
             }
 

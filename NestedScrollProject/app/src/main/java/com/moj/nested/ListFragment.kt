@@ -1,9 +1,9 @@
 package com.moj.nested
 
 import android.os.Bundle
-import android.support.v4.app.Fragment
-import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
+import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -15,7 +15,7 @@ import kotlinx.android.synthetic.main.fragment_list.*
  * @date : 2019/8/9
  * @description : 简单的列表页，配合演示滑动嵌套
  */
-class ListFragment : Fragment() {
+class ListFragment : androidx.fragment.app.Fragment() {
 
     var mView:View?=null
 
@@ -25,8 +25,9 @@ class ListFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        recyclerView.layoutManager = LinearLayoutManager(activity)
-        recyclerView.adapter = object : RecyclerView.Adapter<MyHolder>(){
+        recyclerView.layoutManager =
+            androidx.recyclerview.widget.LinearLayoutManager(activity)
+        recyclerView.adapter = object : androidx.recyclerview.widget.RecyclerView.Adapter<MyHolder>(){
             override fun getItemCount(): Int = 50
 
             override fun onBindViewHolder(p0: MyHolder, p1: Int) {
@@ -46,7 +47,7 @@ class ListFragment : Fragment() {
         }
     }
 
-    class MyHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    class MyHolder(itemView: View) : androidx.recyclerview.widget.RecyclerView.ViewHolder(itemView) {
         init {
             (itemView as TextView).text = "2"
         }

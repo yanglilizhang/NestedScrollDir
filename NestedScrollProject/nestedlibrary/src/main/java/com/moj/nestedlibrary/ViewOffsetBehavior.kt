@@ -1,7 +1,7 @@
 package com.moj.nestedlibrary
 
 import android.content.Context
-import android.support.design.widget.CoordinatorLayout
+import androidx.coordinatorlayout.widget.CoordinatorLayout
 import android.util.AttributeSet
 import android.view.View
 
@@ -22,7 +22,7 @@ import android.view.View
  *
  * ps: 使用此种布局方式时margin属性无效，如需添加间隔，可以使用Space实现。
  */
-open class ViewOffsetBehavior<V : View> : CoordinatorLayout.Behavior<V> {
+open class ViewOffsetBehavior<V : View> : androidx.coordinatorlayout.widget.CoordinatorLayout.Behavior<V> {
 
     private var viewOffsetHelper: ViewOffsetHelper? = null
     private var tempTopBottomOffset = 0
@@ -38,7 +38,7 @@ open class ViewOffsetBehavior<V : View> : CoordinatorLayout.Behavior<V> {
 
     constructor(context: Context, attrs: AttributeSet) : super(context, attrs) {}
 
-    override fun onLayoutChild(parent: CoordinatorLayout, child: V, layoutDirection: Int): Boolean {
+    override fun onLayoutChild(parent: androidx.coordinatorlayout.widget.CoordinatorLayout, child: V, layoutDirection: Int): Boolean {
         this.layoutChild(parent, child, layoutDirection)
         if (this.viewOffsetHelper == null) {
             this.viewOffsetHelper = ViewOffsetHelper(child)
@@ -58,7 +58,7 @@ open class ViewOffsetBehavior<V : View> : CoordinatorLayout.Behavior<V> {
         return true
     }
 
-    protected fun layoutChild(parent: CoordinatorLayout, child: V, layoutDirection: Int) {
+    protected fun layoutChild(parent: androidx.coordinatorlayout.widget.CoordinatorLayout, child: V, layoutDirection: Int) {
         parent.onLayoutChild(child, layoutDirection)
     }
 

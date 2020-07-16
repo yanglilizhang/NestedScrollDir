@@ -16,7 +16,6 @@ import com.jennifer.andy.nestedscrollingdemo.ui.nested.NestedTraditionActivity;
 /**
  * https://github.com/AndyJennifer/NestedScrollingDemo
  *
- *https://github.com/yangsanning/BehaviorDemo
  * https://github.com/Ruomiz/BehaviorSample
  * https://github.com/msdx/behavior-master
  * https://github.com/pengguanming/MiMusicBehavior
@@ -33,7 +32,6 @@ import com.jennifer.andy.nestedscrollingdemo.ui.nested.NestedTraditionActivity;
  */
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-//
 //            * https://github.com/sangxiaonian/EasyRefrush
 //            * https://github.com/niuyouquan/HomeDemo
 //            * https://github.com/BmobSnail/SlideNestedPanelLayout
@@ -47,6 +45,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //            * https://github.com/caocao123/ImitationJD
 //            *
 //            * https://github.com/Jeromeer/HorizontalScrollDemo-master
+
+
+    //https://github.com/yangsanning/BaseItemDecoration
+    //RecyclerView 的分割线封装，便捷处理各种边界
+    //https://github.com/yangsanning/CustomTextView
+    //https://github.com/yangsanning/BasePaint
+    //https://github.com/yangsanning/MagicalTextView
+    //https://github.com/yangsanning/EasyRefreshLayout
+    //https://github.com/yangsanning/CropImageView
+    //https://github.com/yangsanning/CheckView
+//https://github.com/yangsanning/WanAndroid
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
