@@ -16,7 +16,6 @@ import com.jennifer.andy.nestedscrollingdemo.ui.nested.NestedTraditionActivity;
 /**
  * https://github.com/AndyJennifer/NestedScrollingDemo
  *
- * https://github.com/Ruomiz/BehaviorSample
  * https://github.com/msdx/behavior-master
  * https://github.com/pengguanming/MiMusicBehavior
  * https://github.com/xukefeng/custom_behavior
@@ -28,7 +27,12 @@ import com.jennifer.andy.nestedscrollingdemo.ui.nested.NestedTraditionActivity;
  * https://github.com/liuguangsen/HightUi
  * https://github.com/Ovadyah/HomeMallPage 2020仿照最新淘宝首页，京东首页，苏宁首页框架，自定义控件，解决连续滚动等多嵌套问题。
  * https://github.com/weioule/DoubleSuckTopDemo
+ * https://github.com/linciping/BehaviorSample
+ * https://github.com/dxh104/MaterialDisgnPullApp
+ * https://github.com/hushendian/CoordinatorLayout_BehaviorDemo
+ * https://github.com/cqq1234/MyBehaviorDemo
  * https://github.com/xmuSistone/PersistentRecyclerView
+ * https://github.com/ruichaoqun/CustomViewAssamble
  */
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:app2="http://schemas.android.com/apk/res-auto">
+<!--    android:text="@string/scroll_layout_behavior_description"-->
+    <TextView
+        android:layout_width="match_parent"
+        android:text="测试"
+        android:padding="16dp"
+        android:layout_height="wrap_content"/>
+
+<!--    behavior_halfExpandedSpace dimen 半展开时距离顶部的空间-->
+<!--    behavior_fullExpandedSpace dimen 全展开时距离顶部的空间-->
+<!--    behavior_belowTo id 全展开时位于哪个控件之下。如果不设置，则全展开时顶部空间使用fullExpandedSpace-->
+<!--    app2:behavior_fullExpandedSpace="0dp"-->
+<!--    app2:behavior_halfExpandedSpace="225dp"-->
+
+    <FrameLayout
+        android:id="@+id/frame_layout"
+        android:layout_width="match_parent"
+        android:background="#CCC"
+        app:layout_behavior=".behavior.ScrollLayoutBehavior"
+        android:layout_height="match_parent">
+        <!--在底部的内容-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:background="#1AF"
+            android:layout_height="200dp"/>
+        <!--上拉后的内容-->
+        <View
+            android:background="#FA1"
+            android:layout_width="match_parent"
+            android:layout_height="1800dp"/>
+    </FrameLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

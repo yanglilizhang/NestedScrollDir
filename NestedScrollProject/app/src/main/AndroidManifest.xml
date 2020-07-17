@@ -22,6 +22,9 @@
         <activity android:name=".page.FollowUpActivity" />
         <activity android:name=".page.AvatarActivity" />
         <activity android:name=".page.TwoActivity" />
+        <activity android:name=".huawei.SearchActivity" />
+        <activity android:name=".huawei.MarketActivity" />
+        <activity android:name=".ScrollLayoutActivity" />
     </application>
 
 </manifest>
