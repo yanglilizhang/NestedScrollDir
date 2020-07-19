@@ -32,4 +32,14 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, LaGouBehaviorActivity.class);
         startActivity(intent);
     }
+
+    public void four(View view) {
+        Intent intent = new Intent(this, YouXianActivity.class);
+        startActivity(intent);
+    }
+
+    public void five(View view) {
+        Intent intent = new Intent(this, WxActivity.class);
+        startActivity(intent);
+    }
 }

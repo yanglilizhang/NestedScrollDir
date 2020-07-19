@@ -22,6 +22,9 @@
         <activity android:name=".LaGouBehaviorActivity"/>
         <activity android:name=".OppoBehaviorActivity"/>
         <activity android:name=".UCBehaviorActivity"/>
+        <activity android:name=".YouXianActivity" />
+        <activity android:name=".WxActivity" />
+        <activity android:name=".ImmerseActivity" />
     </application>
 
 </manifest>

@@ -61,7 +61,9 @@ public class LagouNewsHeaderPagerBehavior extends ViewOffsetBehavior {
 
     @Override
     public boolean onStartNestedScroll(@NonNull CoordinatorLayout coordinatorLayout, @NonNull View child, @NonNull View directTargetChild, @NonNull View target, int axes, int type) {
-        return (axes & ViewCompat.SCROLL_AXIS_VERTICAL) != 0 && canScroll(child, 0) && !isClosed(child);
+        boolean accepted = (axes & ViewCompat.SCROLL_AXIS_VERTICAL) != 0 && canScroll(child, 0) && !isClosed(child);
+        Log.d(TAG, "--------->onStartNestedScroll,是否由父布局共同处理滑动:" + accepted);
+        return accepted;
     }
 
     @Override

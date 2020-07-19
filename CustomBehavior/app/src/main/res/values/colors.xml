@@ -10,4 +10,33 @@
     <color name="textSecondary">#727272</color>
     <color name="divider">#B6B6B6</color>
     <color name="transparent">#00000000</color>
+
+    <color name="yellow">#F8E433</color>
+    <color name="red">#D61515</color>
+    <color name="blue">#0221D5</color>
+    <color name="green">#02E70E</color>
+
+    <color name="alpha_10_white">#19FFFFFF</color>
+    <color name="alpha_20_white">#32FFFFFF</color>
+    <color name="alpha_30_white">#48FFFFFF</color>
+    <color name="alpha_40_white">#64ffffff</color>
+    <color name="alpha_50_white">#7dffffff</color>
+    <color name="alpha_60_white">#96FFFFFF</color>
+    <color name="alpha_70_white">#afFFFFFF</color>
+    <color name="alpha_80_white">#c8FFFFFF</color>
+    <color name="alpha_90_white">#E6FFFFFF</color>
+    <color name="alpha_95_white">#F2FFFFFF</color>
+    <color name="alpha_05_black">#0D000000</color>
+    <color name="alpha_10_black">#19000000</color>
+    <color name="alpha_20_black">#32000000</color>
+    <color name="alpha_30_black">#48000000</color>
+    <color name="alpha_40_black">#64000000</color>
+    <color name="alpha_50_black">#7d000000</color>
+    <color name="alpha_60_black">#96000000</color>
+    <color name="alpha_70_black">#af000000</color>
+    <color name="alpha_80_black">#c8000000</color>
+    <color name="alpha_90_black">#E6000000</color>
+
+
+
 </resources>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:splitMotionEvents="false">
+
+    <!--搜索-->
+    <include
+        android:id="@+id/rl_tool_bar"
+        layout="@layout/block_home_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="48dp" />
+
+    <android.support.design.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/rl_tool_bar"
+        android:splitMotionEvents="false">
+        <!-- android:splitMotionEvents:定义布局是否传递触摸事件(touch)到子布局,
+        true表示传递给子布局,false表示不传递。-->
+        <RelativeLayout
+            android:id="@+id/rl_home_header"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:splitMotionEvents="false"
+            app:layout_behavior="@string/behavior_home_header">
+
+            <com.scwang.smartrefresh.layout.SmartRefreshLayout
+                android:id="@+id/srl_home_header"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:overScrollMode="never"
+                android:splitMotionEvents="false">
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recycler_home_header"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:overScrollMode="never"
+                    android:splitMotionEvents="false" />
+            </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_home_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:splitMotionEvents="false"
+            app:layout_behavior="@string/behavior_home_content">
+            <!--ListView/RecyclView 设置滑动到边缘时无效果模式overScrollMode=never-->
+            <!--ListView/RecyclView 设置滑动到顶部或者底部的颜色或者背景-->
+            <!--android:overScrollFooter="@android:color/transparent"
+            android:overScrollHeader="@android:color/transparent"-->
+            <!--            ListView/RecyclView/ScrollView 设置滚动条不显示android:scrollbars="none"-->
+            <com.scwang.smartrefresh.layout.SmartRefreshLayout
+                android:id="@+id/srl_home_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:overScrollMode="never">
+
+                <com.example.xj.nestedrecyclerview.widget.refresh.HomeSmartRefreshHeader
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white" />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recycler_home_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:overScrollMode="never" />
+
+            </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+        </RelativeLayout>
+    </android.support.design.widget.CoordinatorLayout>
+
+    <include
+        android:id="@+id/cl_home_topic_header"
+        layout="@layout/block_home_top_tb"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_alignBottom="@id/rl_tool_bar"
+        android:visibility="gone" />
+
+</RelativeLayout>
