@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import android.widget.Toast
+import com.moj.nested.StickyLayout.StickyActivity
 import com.moj.nested.huawei.MarketActivity
 import com.moj.nested.huawei.SearchActivity
 import com.moj.nested.page.TwoActivity
@@ -19,7 +20,10 @@ import kotlinx.android.synthetic.main.activity_main.*
  */
 class MainActivity : AppCompatActivity() {
 
-    val data = mutableListOf("布局用behavior", "嵌套", "用户详情页", "其他效果", "华为", "搜索", "99")
+    val data = mutableListOf(
+        "布局用behavior", "嵌套", "用户详情页", "其他效果", "华为", "搜索", "99",
+        "sticky"
+    )
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -57,6 +61,7 @@ class MainActivity : AppCompatActivity() {
                     4 -> MarketActivity.startToMe(itemView.context)
                     5 -> SearchActivity.startToMe(itemView.context)
                     6 -> ScrollLayoutActivity.startToMe(itemView.context)
+                    7 -> StickyActivity.startToMe(itemView.context)
                     else -> Toast.makeText(itemView.context, "bug", Toast.LENGTH_SHORT).show()
                 }
             }

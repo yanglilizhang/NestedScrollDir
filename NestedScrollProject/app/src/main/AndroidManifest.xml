@@ -25,6 +25,7 @@
         <activity android:name=".huawei.SearchActivity" />
         <activity android:name=".huawei.MarketActivity" />
         <activity android:name=".ScrollLayoutActivity" />
+        <activity android:name=".StickyLayout.StickyActivity" />
     </application>
 
 </manifest>

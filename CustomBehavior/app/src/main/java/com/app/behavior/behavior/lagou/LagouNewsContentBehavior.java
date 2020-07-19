@@ -1,0 +1,125 @@
+package com.app.behavior.behavior.lagou;
+
+import android.content.Context;
+import android.util.AttributeSet;
+import android.util.Log;
+import android.view.View;
+
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
+
+import com.app.behavior.App;
+import com.app.behavior.BuildConfig;
+import com.app.behavior.R;
+import com.app.behavior.behavior.helper.HeaderScrollingViewBehavior;
+
+import java.util.List;
+
+
+public class LagouNewsContentBehavior extends HeaderScrollingViewBehavior {
+    private static final String TAG = "UcNewsContentBehavior";
+    private float lastX, lastY;
+
+    public LagouNewsContentBehavior() {
+    }
+
+    public LagouNewsContentBehavior(Context context, AttributeSet attrs) {
+        super(context, attrs);
+    }
+
+    @Override
+    public boolean layoutDependsOn(CoordinatorLayout parent, View child, View dependency) {
+        return isDependOn(dependency);
+    }
+
+    @Override
+    public boolean onDependentViewChanged(CoordinatorLayout parent, View child, View dependency) {
+        if (BuildConfig.DEBUG) {
+            Log.d(TAG, "onDependentViewChanged");
+        }
+        //child-LinearLayout
+        //dependency-FrameLayout-WeatherPager
+        offsetChildAsNeeded(parent, child, dependency);
+        return false;
+    }
+
+    private void offsetChildAsNeeded(CoordinatorLayout parent, View child, View dependency) {
+        if (onContentListener != null) {
+            Log.e("**", "------>dependency.getTranslationY()=" + dependency.getTranslationY());
+            int value = Math.abs((int) (-dependency.getTranslationY() / (getHeaderOffsetRange() * 1.0f) * getScrollRange(dependency)));
+            onContentListener.onProgress(value);
+        }
+        //WeatherPager-dependency.getTranslationY()
+        int scrollY = (int) (-dependency.getTranslationY() / (getHeaderOffsetRange() * 1.0f) * getScrollRange(dependency));
+        //LinearLayout往上滑动 测量和布局HeaderScrollingViewBehavior已处理
+        child.setTranslationY(scrollY);
+    }
+
+    /**
+     * 在被依赖的head属于打开状态的时候是否允许ViewPager可以左右滑动，如果允许滑动可以注释掉拦截器，否则ViewPager将不能滑动，知道head关闭
+     * 这里只针对可以横向滑动的容器
+     *
+     * @return
+     */
+//    @Override
+//    public boolean onInterceptTouchEvent(CoordinatorLayout parent, View child, MotionEvent ev) {
+//        if (ev.getActionMasked() == MotionEvent.ACTION_DOWN) {
+//            lastX = ev.getX();
+//            lastY = ev.getY();
+//        }
+//
+//        if (ev.getActionMasked() == MotionEvent.ACTION_MOVE) {
+//            float currX = ev.getX();
+//            float currY = ev.getY();
+//            boolean horizontalScroll = Math.abs(currX - lastX) / Math.abs(currY - lastY) > 1;
+//            if (horizontalScroll && child.getTranslationY() == 0)
+//                return true;
+//        }
+//
+//        return super.onInterceptTouchEvent(parent, child, ev);
+//    }
+    @Override
+    protected View findFirstDependency(List<View> views) {
+        for (int i = 0, z = views.size(); i < z; i++) {
+            View view = views.get(i);
+            if (isDependOn(view))
+                return view;
+        }
+        return null;
+    }
+
+    @Override
+    protected int getScrollRange(View v) {
+        if (isDependOn(v)) {
+            //滑动范围=测量高度-getFinalHeight()
+            return Math.max(0, v.getMeasuredHeight() - getFinalHeight());
+        } else {
+            return super.getScrollRange(v);
+        }
+    }
+
+    private int getHeaderOffsetRange() {
+        return App.getmContext().getResources().getDimensionPixelOffset(R.dimen.lagou_news_header_pager_offset);
+    }
+
+    private int getFinalHeight() {
+        return App.getmContext().getResources().getDimensionPixelOffset(R.dimen.lagou_news_header_title_height);
+    }
+
+
+    private boolean isDependOn(View dependency) {
+        return dependency != null && dependency.getId() == R.id.id_uc_news_header_pager;
+    }
+
+    private OnContentListener onContentListener;
+
+    public void setOnContentListener(OnContentListener onContentListener) {
+        this.onContentListener = onContentListener;
+    }
+
+    public interface OnContentListener {
+        /**
+         * Progress value
+         */
+        void onProgress(int offset);
+    }
+}

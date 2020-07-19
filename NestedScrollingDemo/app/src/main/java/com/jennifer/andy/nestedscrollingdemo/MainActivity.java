@@ -16,10 +16,7 @@ import com.jennifer.andy.nestedscrollingdemo.ui.nested.NestedTraditionActivity;
 /**
  * https://github.com/AndyJennifer/NestedScrollingDemo
  *
- * https://github.com/Administrator0-0/BehaviorDemo
- * https://github.com/msdx/behavior-master
  * https://github.com/pengguanming/MiMusicBehavior
- * https://github.com/xukefeng/custom_behavior
  * https://github.com/EnumContent/MyCustomView
  * https://github.com/xuweitalang/WX_RecyclerView
  * https://github.com/879058443/NestedScrollRecyclerView
