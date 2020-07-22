@@ -15,7 +15,14 @@ import com.jennifer.andy.nestedscrollingdemo.ui.nested.NestedTraditionActivity;
 
 /**
  * https://github.com/AndyJennifer/NestedScrollingDemo
- *
+ * 
+
+
+    https://juejin.im/post/5f16f825e51d45346c5117c4#heading-8
+    https://juejin.im/post/5ea3fc386fb9a03c7a333830#heading-1
+    https://github.com/xmuSistone/PersistentRecyclerView
+    https://github.com/hufeiyang/NestedScrollingParent2Layout
+
  * https://github.com/pengguanming/MiMusicBehavior
  * https://github.com/dxh104/MaterialDisgnPullApp
  * https://github.com/shengweiling/SlidingLayout
