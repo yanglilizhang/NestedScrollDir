@@ -24,13 +24,13 @@ import com.jennifer.andy.nestedscrollingdemo.ui.nested.NestedTraditionActivity;
     https://github.com/hufeiyang/NestedScrollingParent2Layout
 
  * https://github.com/pengguanming/MiMusicBehavior
+ * https://github.com/pengguanming/ElemeNestedScrolling
  * https://github.com/dxh104/MaterialDisgnPullApp
  * https://github.com/shengweiling/SlidingLayout
  * https://github.com/weioule/DoubleSuckTopDemo
  * https://github.com/dxh104/MaterialDisgnPullApp
  * https://github.com/hushendian/CoordinatorLayout_BehaviorDemo
  * https://github.com/cqq1234/MyBehaviorDemo
- * https://github.com/xmuSistone/PersistentRecyclerView
  * https://github.com/ruichaoqun/CustomViewAssamble
 * https://github.com/SiberiaDante/MultiScrollDemo
  */
