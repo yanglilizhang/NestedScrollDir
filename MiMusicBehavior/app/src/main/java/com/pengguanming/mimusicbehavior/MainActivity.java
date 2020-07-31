@@ -18,9 +18,7 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    private final String[] mTitles = {
-            "热门", "专辑", "视屏","资讯"
-    };
+    private final String[] mTitles = {"热门", "专辑", "视屏", "资讯"};
     private SlidingTabLayout mSl;
     private ViewPager mViewPager;
     private ArrayList<Fragment> mFragments = new ArrayList<>();

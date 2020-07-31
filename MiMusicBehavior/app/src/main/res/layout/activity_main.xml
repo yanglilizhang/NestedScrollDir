@@ -118,6 +118,7 @@
     <!--TitleBar部分-->
 
     <!--Content部分-->
+    <!--  content_trans_y  280dp-->
     <LinearLayout
         android:id="@+id/ll_content"
         android:layout_width="match_parent"

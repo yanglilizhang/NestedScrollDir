@@ -41,6 +41,9 @@ public class TitleBarBehavior extends CoordinatorLayout.Behavior {
         return dependency.getId() == R.id.ll_content;
     }
 
+    /**
+     * 需要做出的变化
+     */
     @Override
     public boolean onDependentViewChanged(@NonNull CoordinatorLayout parent, @NonNull View child, @NonNull View dependency) {
         //调整TitleBar位置要紧贴Content顶部上面
@@ -54,7 +57,7 @@ public class TitleBarBehavior extends CoordinatorLayout.Behavior {
 
     @Override
     public boolean onLayoutChild(@NonNull CoordinatorLayout parent, @NonNull View child, int layoutDirection) {
-        //找到Content的依赖引用
+        //找到Content的依赖引用-child的所有依赖
         List<View> dependencies = parent.getDependencies(child);
         View dependency = null;
         for (View view : dependencies) {
