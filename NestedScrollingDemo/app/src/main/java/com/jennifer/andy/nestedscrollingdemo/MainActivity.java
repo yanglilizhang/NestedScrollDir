@@ -2,7 +2,9 @@ package com.jennifer.andy.nestedscrollingdemo;
 
 import android.content.Intent;
 import android.os.Bundle;
+
 import androidx.appcompat.app.AppCompatActivity;
+
 import android.view.View;
 
 import com.jennifer.andy.nestedscrollingdemo.ui.abl.CdlWithAppBarActivity;
@@ -15,24 +17,23 @@ import com.jennifer.andy.nestedscrollingdemo.ui.nested.NestedTraditionActivity;
 
 /**
  * https://github.com/AndyJennifer/NestedScrollingDemo
- * 
 
-
-    https://juejin.im/post/5f16f825e51d45346c5117c4#heading-8
-    https://juejin.im/post/5ea3fc386fb9a03c7a333830#heading-1
-    https://github.com/xmuSistone/PersistentRecyclerView
-    https://github.com/hufeiyang/NestedScrollingParent2Layout
+ * https://juejin.im/post/5f16f825e51d45346c5117c4#heading-8
+ * https://juejin.im/post/5ea3fc386fb9a03c7a333830#heading-1
+ *
+ * https://github.com/xmuSistone/PersistentRecyclerView
+ * https://github.com/hufeiyang/NestedScrollingParent2Layout
+ * https://juejin.im/post/6844904184915951624
 
  * https://github.com/pengguanming/MiMusicBehavior
  * https://github.com/pengguanming/ElemeNestedScrolling
  * https://github.com/dxh104/MaterialDisgnPullApp
  * https://github.com/shengweiling/SlidingLayout
- * https://github.com/weioule/DoubleSuckTopDemo
  * https://github.com/dxh104/MaterialDisgnPullApp
  * https://github.com/hushendian/CoordinatorLayout_BehaviorDemo
  * https://github.com/cqq1234/MyBehaviorDemo
  * https://github.com/ruichaoqun/CustomViewAssamble
-* https://github.com/SiberiaDante/MultiScrollDemo
+ * https://github.com/SiberiaDante/MultiScrollDemo
  */
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
