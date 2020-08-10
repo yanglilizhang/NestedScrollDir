@@ -21,9 +21,12 @@ import com.jennifer.andy.nestedscrollingdemo.ui.nested.NestedTraditionActivity;
  * https://juejin.im/post/5f16f825e51d45346c5117c4#heading-8
  * https://juejin.im/post/5ea3fc386fb9a03c7a333830#heading-1
  *
- * https://github.com/xmuSistone/PersistentRecyclerView
  * https://github.com/hufeiyang/NestedScrollingParent2Layout
  * https://juejin.im/post/6844904184915951624
+ *
+ *https://www.jianshu.com/p/0e91648173dc
+ * https://github.com/Ubitar/NestRecyclerView_V2
+   https://github.com/Ubitar/NestRecyclerView_V1
 
  * https://github.com/pengguanming/MiMusicBehavior
  * https://github.com/pengguanming/ElemeNestedScrolling
@@ -34,6 +37,8 @@ import com.jennifer.andy.nestedscrollingdemo.ui.nested.NestedTraditionActivity;
  * https://github.com/cqq1234/MyBehaviorDemo
  * https://github.com/ruichaoqun/CustomViewAssamble
 * https://github.com/SiberiaDante/MultiScrollDemo
+ *
+ * https://www.jianshu.com/p/0783b0a37fa1
  * 支持多个滑动布局(RecyclerView、WebView、ScrollView等)和lView等)和
  * 普通控件(TextView、ImageView、LinearLayou、自定义View等)持续连贯滑动的容器,
  * 它使所有的子View像一个整体一样连续顺畅滑动。并且支持布局吸顶功能。
