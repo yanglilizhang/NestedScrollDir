@@ -33,6 +33,10 @@ import com.jennifer.andy.nestedscrollingdemo.ui.nested.NestedTraditionActivity;
  * https://github.com/xmuSistone/PersistentRecyclerView
  * https://github.com/ruichaoqun/CustomViewAssamble
 * https://github.com/SiberiaDante/MultiScrollDemo
+ * 支持多个滑动布局(RecyclerView、WebView、ScrollView等)和lView等)和
+ * 普通控件(TextView、ImageView、LinearLayou、自定义View等)持续连贯滑动的容器,
+ * 它使所有的子View像一个整体一样连续顺畅滑动。并且支持布局吸顶功能。
+ * https://github.com/donkingliang/ConsecutiveScroller !!!!!!!!!!
  */
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
