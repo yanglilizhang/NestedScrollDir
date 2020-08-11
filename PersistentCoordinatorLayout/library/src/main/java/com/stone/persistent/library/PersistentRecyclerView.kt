@@ -9,6 +9,7 @@ import androidx.viewpager2.widget.ViewPager2
 
 /**
  * 内层的RecyclerView
+ * ViewPager和ViewPager2可随意选用，均已内部兼容；
  */
 class PersistentRecyclerView @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
@@ -23,7 +24,7 @@ class PersistentRecyclerView @JvmOverloads constructor(
      * 跟ParentView建立连接，主要两件事情 -
      * 1. 将自己上报ViewPager/ViewPager2，通过tag关联到currentItem的View中
      * 2. 将ViewPager/ViewPager2报告给ParentRecyclerView
-     * 这一坨代码需要跟ParentRecyclerView连起来看，否则可能会懵
+     * 这一坨代码需要跟PersistentCoordinatorLayout连起来看，否则可能会懵
      */
     private fun connectToParent() {
         var viewPager: ViewPager? = null

@@ -37,7 +37,8 @@ class HookedScroller(context: Context, persistentProvider: () -> PersistentRecyc
 
         // Android 9.0及以上，非公开Api接口被禁用，无法获取mDuration字段
         // 此处伪装成系统身份，绕过 @hide 检查
-        val metaGetDeclaredField = Class::class.java.getDeclaredMethod("getDeclaredField", String::class.java)
+        val metaGetDeclaredField =
+            Class::class.java.getDeclaredMethod("getDeclaredField", String::class.java)
         durationField = metaGetDeclaredField.invoke(scrollerYObj.javaClass, "mDuration") as Field
         durationField.isAccessible = true
 
@@ -52,7 +53,8 @@ class HookedScroller(context: Context, persistentProvider: () -> PersistentRecyc
      */
     private fun syncFling() {
         val velocityY = this.getVelocityY()
-        if (velocityY < -200) {
+        //TODO 原参数为200
+        if (velocityY < -2000) {
             val childRecyclerView = persistentProvider.invoke()
             childRecyclerView?.fling(0, -velocityY)
         }
@@ -62,20 +64,12 @@ class HookedScroller(context: Context, persistentProvider: () -> PersistentRecyc
      * 监听OverScroller.fling()，为后续的syncFling埋下种子
      */
     override fun fling(
-        startX: Int,
-        startY: Int,
-        velocityX: Int,
-        velocityY: Int,
-        minX: Int,
-        maxX: Int,
-        minY: Int,
-        maxY: Int,
-        overX: Int,
-        overY: Int
+        startX: Int, startY: Int, velocityX: Int, velocityY: Int, minX: Int,
+        maxX: Int, minY: Int, maxY: Int, overX: Int, overY: Int
     ) {
         super.fling(startX, startY, velocityX, velocityY, minX, maxX, minY, maxY, overX, overY)
-
-        if (velocityY < -200) {
+        //TODO 原参数为200
+        if (velocityY < -2000) {
             // 获取fling动画时长
             val duration = durationField.get(scrollerYObj) as Int
 
