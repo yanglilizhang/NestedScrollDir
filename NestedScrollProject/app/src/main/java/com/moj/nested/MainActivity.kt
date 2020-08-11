@@ -1,5 +1,6 @@
 package com.moj.nested
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -10,9 +11,11 @@ import android.view.ViewGroup
 import android.widget.TextView
 import android.widget.Toast
 import com.moj.nested.StickyLayout.StickyActivity
+import com.moj.nested.hencoder.ScrollActivity
 import com.moj.nested.huawei.MarketActivity
 import com.moj.nested.huawei.SearchActivity
 import com.moj.nested.page.TwoActivity
+import com.moj.nested.stickyScrollView.StickyScrollViewActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
 /**
@@ -43,8 +46,11 @@ class MainActivity : AppCompatActivity() {
                 override fun onBindViewHolder(p0: MyViewHolder, p1: Int) {
                     p0.bind(p1, data[p1])
                 }
-
             }
+
+        button.setOnClickListener {
+            startActivity(Intent(this, ScrollActivity::class.java))
+        }
     }
 
     class MyViewHolder(itemView: View) :
