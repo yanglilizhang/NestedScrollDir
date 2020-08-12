@@ -23,7 +23,7 @@ import com.jennifer.andy.nestedscrollingdemo.ui.nested.NestedTraditionActivity;
  *
  * https://github.com/hufeiyang/NestedScrollingParent2Layout
  * https://juejin.im/post/6844904184915951624
- *
+ * https://github.com/JasonGaoH/NestedRecyclerView
  *https://www.jianshu.com/p/0e91648173dc
  * https://github.com/Ubitar/NestRecyclerView_V2
    https://github.com/Ubitar/NestRecyclerView_V1
