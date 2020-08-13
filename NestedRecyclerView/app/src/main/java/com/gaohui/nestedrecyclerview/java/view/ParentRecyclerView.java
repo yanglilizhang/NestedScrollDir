@@ -16,6 +16,12 @@ import com.gaohui.nestedrecyclerview.java.utils.FlingHelper;
 
 import java.util.concurrent.atomic.AtomicBoolean;
 
+/**
+ * 处理内外两层RecyclerView的滑动冲突问题，主要是想解决下面两种场景：
+ * 一、手指上滑时，当外部RecyclerView滑动底部的时候，内部的RecyclerView能继续去响应用户的滑动，
+ * 因为内部的RecyclerView理论上是可以无限滚动的；
+ * 二、手指下滑时，当内部的RecyclerView滑动到顶部的时候，外部的RecyclerView能够继续响应用户的下滑事件。
+ */
 public class ParentRecyclerView extends RecyclerView {
     FlingHelper mFlingHelper;
 
@@ -92,9 +98,16 @@ public class ParentRecyclerView extends RecyclerView {
             }
 
             @Override
-            public boolean canScrollVertically() {
+            public boolean canScrollVertically() { //是否在竖直方向上可以滚动
+                //找到当前的childRecyclerView
                 ChildRecyclerView childRecyclerView = findNestedScrollingChildRecyclerView();
+                //只有当前childRecyclerView滑动到顶部才认为ParentRecyclerView是可以竖直方向是可以滚动的
                 return (canScrollVertically.get()  || childRecyclerView == null || childRecyclerView.isScrollTop());
+            }
+
+            @Override
+            public boolean canScrollHorizontally() { //是否在水平方向上可以滚动
+                return super.canScrollHorizontally();
             }
 
             @Override

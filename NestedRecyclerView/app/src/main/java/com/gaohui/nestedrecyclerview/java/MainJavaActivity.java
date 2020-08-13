@@ -22,7 +22,14 @@ import java.util.Arrays;
  * https://juejin.im/post/6844903922482561037#comment
  */
 public class MainJavaActivity extends BaseMenuActivity {
+//1、Fling和Scroll，是否滑动到顶部，canScrollVertically函数，目前上层参数对象固定为RecyclerView，
+// 可以将RecylerView 换成View，用来兼容子 Fragment 使用WebView 等非RecyclerView 的情况。
 
+// 2、在某些场景中，是否滑动到顶部，仅依靠：canScrollVertically，是不够严谨的，
+//  还需要结合其他方式来增加判定。例如：借助 第一个完全显示的元素 等
+
+//3、ViewPage 上下滑动时，Footer ViewHolder 会存在 AttachedToWindow 和DetachedToWindow 的情况，
+// 资源分配&释放，会出现子类目页卡顿。尤其是一些比较吃内存的子类目页，也会有内存抖动的情况。
     ArrayList<Object> mDataList = new ArrayList<Object>();
 
     MultiTypeAdapter adapter = new MultiTypeAdapter(mDataList);
