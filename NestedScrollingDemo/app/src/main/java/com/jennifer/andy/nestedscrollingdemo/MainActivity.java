@@ -31,8 +31,6 @@ import com.jennifer.andy.nestedscrollingdemo.ui.nested.NestedTraditionActivity;
 
  * https://github.com/pengguanming/ElemeNestedScrolling
  * https://github.com/dxh104/MaterialDisgnPullApp
- * https://github.com/shengweiling/SlidingLayout
- * https://github.com/dxh104/MaterialDisgnPullApp
  * https://github.com/hushendian/CoordinatorLayout_BehaviorDemo
  * https://github.com/cqq1234/MyBehaviorDemo
  * https://github.com/ruichaoqun/CustomViewAssamble
@@ -52,12 +50,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //            * https://github.com/BmobSnail/SlideNestedPanelLayout
 //            * https://github.com/hufeiyang/NestedScrollingParent2Layout
 //            * https://github.com/taolin2107/SlideConflict
-//            * https://github.com/JohLiu/NestedConflict
 //            * https://github.com/Clearlove2015/UseFixedHeaderScrollView
 //            * https://github.com/flowerthorn/FixedTopBarDemo
 //            * https://github.com/ml1953/ReboundScrollView
 //            * https://github.com/chidehang/ComboScrollLayout
-//            * https://github.com/caocao123/ImitationJD
 //            *
 //            * https://github.com/Jeromeer/HorizontalScrollDemo-master
 
@@ -71,6 +67,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     //https://github.com/yangsanning/CropImageView
     //https://github.com/yangsanning/CheckView
 //https://github.com/yangsanning/WanAndroid
+    //https://github.com/XiaoBaiCZ/DrawableTextView
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
