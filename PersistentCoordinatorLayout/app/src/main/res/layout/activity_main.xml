@@ -117,6 +117,7 @@
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
+<!-- 不设置app:layout_scrollFlags="scroll" 就会吸顶-->
                 <include layout="@layout/main_feeds_tabs" />
 
             </com.google.android.material.appbar.AppBarLayout>

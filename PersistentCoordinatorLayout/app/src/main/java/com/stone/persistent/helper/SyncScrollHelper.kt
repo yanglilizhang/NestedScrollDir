@@ -44,7 +44,7 @@ class SyncScrollHelper(mainActivity: MainActivity) {
 
         val backImgHeight2 = screenWidth / Companion.BACK_DIMENSION_RATIO2
         val translationY2 = backImgHeight2 - backImgHeight1
-        backIv2.translationY = -translationY2
+        backIv2.translationY = -translationY2 //年货节
 
         searchBarLayout.translationY = statusBarHeight + toolbarHeight
     }
