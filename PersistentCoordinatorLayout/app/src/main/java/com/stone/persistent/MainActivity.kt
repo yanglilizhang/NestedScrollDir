@@ -16,7 +16,15 @@ import kotlinx.android.synthetic.main.home_top_content.*
  * https://github.com/xmuSistone/PersistentCoordinatorLayout
  */
 class MainActivity : AppCompatActivity() {
+//    CoordinatorLayout已经实现了NestedScrollingParent3接口，当底部商品流列表上拉或下拉时，
+//    会自动将Fling的速率传递给AppBarLayout。而AppBarLayout上拉触底时，
+//    却无法将Fling速率传递给底部的商品流RecyclerView。所以，我们只要能改造好这一点，
+//    就能让CoordinatorLayout“更像是一个长列表”。
 
+    //    要实现这一点并不复杂，AppBarLayout的fling是通过behavior实现的，
+//    behavior内部会维护一个OverScroller对象，OverScroller保存了我们想要的一切，
+//    包括Fling速率和滑行时间。我们只要能在正确的时间，把正确的Fling速率传递好，
+//    就能让CoordinatorLayout实现的长列表毫无违和感！
     private var pullRefreshHandler: Handler? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {

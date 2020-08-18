@@ -86,7 +86,8 @@
         app:srlAccentColor="#fff"
         app:srlEnableOverScrollBounce="false"
         app:srlReboundDuration="600">
-
+<!--        srlEnableOverScrollBounce 设置是否开启越界回弹功能-->
+<!--        srlReboundDuration释放后回弹动画时长（默认250毫秒）-->
         <com.scwang.smartrefresh.layout.header.ClassicsHeader
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -107,7 +108,10 @@
                 android:fadingEdge="none"
                 app:elevation="0dp"
                 tools:ignore="WebViewLayout">
-
+<!--layout_scrollFlags:-->
+<!--* scroll:跟着滑动，不设置，则会导致这部分固定，其实就相当于普通的View了-->
+<!--* enterAlways：一下滑的时候就会显示出来-->
+<!--* enterAlwaysCollapsed：下滑的时候如果，到顶部才显示-->
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -136,7 +140,7 @@
     </com.scwang.smartrefresh.layout.SmartRefreshLayout>
 
     <!-- 4. 搜索框-->
-
+<!--    顶部Header部分 translationY -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/main_search_layout"
         android:layout_width="match_parent"
