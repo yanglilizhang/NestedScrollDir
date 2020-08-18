@@ -25,11 +25,6 @@ import com.jennifer.andy.nestedscrollingdemo.ui.nested.NestedTraditionActivity;
  * https://github.com/hufeiyang/NestedScrollingParent2Layout
  * https://juejin.im/post/6844904184915951624
 
- *https://www.jianshu.com/p/0e91648173dc
- * https://github.com/Ubitar/NestRecyclerView_V2
-
-
- * https://github.com/pengguanming/ElemeNestedScrolling
  * https://github.com/dxh104/MaterialDisgnPullApp
  * https://github.com/hushendian/CoordinatorLayout_BehaviorDemo
  * https://github.com/cqq1234/MyBehaviorDemo
@@ -46,14 +41,13 @@ import com.jennifer.andy.nestedscrollingdemo.ui.nested.NestedTraditionActivity;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
 //            * https://github.com/sangxiaonian/EasyRefrush
-//            * https://github.com/niuyouquan/HomeDemo
 //            * https://github.com/BmobSnail/SlideNestedPanelLayout
 //            * https://github.com/hufeiyang/NestedScrollingParent2Layout
 //            * https://github.com/taolin2107/SlideConflict
 //            * https://github.com/Clearlove2015/UseFixedHeaderScrollView
 //            * https://github.com/flowerthorn/FixedTopBarDemo
 //            * https://github.com/ml1953/ReboundScrollView
-//            * https://github.com/chidehang/ComboScrollLayout
+//            * https://github.com/chidehang/ComboScrollLayout  ***
 //            *
 //            * https://github.com/Jeromeer/HorizontalScrollDemo-master
 
