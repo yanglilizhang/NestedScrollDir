@@ -9,19 +9,24 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".sample.Main2Activity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".MainActivity">
+
+        </activity>
+
         <meta-data
             android:name="design_width_in_dp"
-            android:value="360"/>
+            android:value="360" />
         <meta-data
             android:name="design_height_in_dp"
-            android:value="640"/>
+            android:value="640" />
+
         <activity android:name=".ViewOffsetActivity" />
         <activity android:name=".ViewPagerActivity" />
         <activity android:name=".HeaderImageActivity" />
@@ -31,10 +36,9 @@
         <activity android:name=".huawei.SearchActivity" />
         <activity android:name=".huawei.MarketActivity" />
         <activity android:name=".ScrollLayoutActivity" />
-        <activity android:name=".StickyLayout.StickyActivity" />
-<!--        <activity android:name=".page.AppBarTwoActivity" />-->
-<!--        <activity android:name=".page.AppBarThreeActivity" />-->
-<!--        <activity android:name=".page.AppBarCoordiActivity" />-->
+        <activity android:name=".StickyLayout.StickyActivity" /> <!-- <activity android:name=".page.AppBarTwoActivity" /> -->
+        <!-- <activity android:name=".page.AppBarThreeActivity" /> -->
+        <!-- <activity android:name=".page.AppBarCoordiActivity" /> -->
         <activity android:name=".stickyScrollView.StickyScrollViewActivity" />
         <activity android:name=".hencoder.ScrollActivity" />
     </application>
